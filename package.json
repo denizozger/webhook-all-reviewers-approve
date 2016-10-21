@@ -1,0 +1,15 @@
+{
+  "name": "webhook-all-reviewers-approve",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "denizozger@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "hapi": "^15.2.0"
+  }
+}
