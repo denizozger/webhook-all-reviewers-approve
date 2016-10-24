@@ -22,6 +22,7 @@ server.route({
     method: 'POST',
     path:'/check-approvers', 
     handler: function (request, reply) {
+        console.log(request.payload);
         return reply('hello world');
     }
 });
