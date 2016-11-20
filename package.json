@@ -4,12 +4,37 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "npm run build",
+    "build": "babel lib -d dist",
+    "start": "node dist/index",
+    "watch": "nodemon lib/index --exec babel-node --presets latest,stage-2",
+    "test": "mocha --compilers js:babel-register --require babel-polyfill",
+    "test:watch": "mocha --compilers js:babel-register --require babel-polyfill -w"
   },
   "author": "denizozger@gmail.com",
   "license": "ISC",
   "dependencies": {
-    "hapi": "^15.2.0"
+    "bluebird": "^3.4.6",
+    "github": "^6.0.4",
+    "hapi": "^15.2.0",
+    "menna": "^1.0.1",
+    "mongodb": "^2.2.11",
+    "newrelic": "^1.34.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.7",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "babel-preset-stage-2": "^6.18.0",
+    "mocha": "^3.1.2",
+    "node-uuid": "^1.4.7",
+    "nodemon": "^1.11.0"
+  },
+  "engines": {
+    "node": "6.9.1"
   }
 }
